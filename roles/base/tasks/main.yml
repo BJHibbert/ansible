@@ -5,6 +5,7 @@
       - dnf-utils
       - fastfetch
       - nano
+      - neovim
     state: latest
   when: ansible_facts['os_family'] == "RedHat"
 
@@ -13,7 +14,7 @@
   ansible.builtin.apt:
     name:
       - fastfetch
-      - vim
+      - neovim
     state: latest
   when: ansible_facts['os_family'] == "Debian"
 
