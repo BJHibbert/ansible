@@ -11,14 +11,6 @@
       update_cache: yes
     when: ansible_facts['os_family'] == "RedHat"
 
-  - name: Install packages for Fedora
-    tags: always
-    ansible.builtin.dnf:
-      name:
-        - fastfetch
-      state: latest
-    when: ansible_facts['os_family'] == "RedHat"
-
   - name: Install updates for Debian
     tags: always
     ansible.builtin.apt:
@@ -26,11 +18,8 @@
       upgrade: dist
     when: ansible_facts['os_family'] == "Debian"
 
-  - name: Install packages for Debian
-    tags: always
-    ansible.builtin.apt:
-      name:
-        - fastfetch
-      state: latest
-    when: ansible_facts['os_family'] == "Debian"
+- hosts: all
+  become: true
+  roles:
+    - base
 
