@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Remove ansible user and home directory
+    ansible.builtin.user:
+      name: ansible
+      state: absent
+      remove: true
+      force: true
+
+  - name: Remove simone user and home directory
+    ansible.builtin.user:
+      name: simone
+      state: absent
+      remove: true
+      force: true
