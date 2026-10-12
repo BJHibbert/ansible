@@ -54,4 +54,5 @@
   ansible.builtin.authorized_key:
     user: ansible
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKFM7jdkwWE920yK2+lGHfQnYisSxKfSkSxpLKpPM7mb bjh-ansible"
+  no_log: true
 
