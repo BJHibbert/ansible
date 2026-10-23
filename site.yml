@@ -23,3 +23,16 @@
   roles:
     - base
 
+- hosts: all
+  tasks:
+
+  - name: Check if cinnamon is installed
+    ansible.builtin.stat:
+      path: /usr/bin/cinnamon
+    register: cinnamon_stat
+
+  - name: Apply role if cinnamon is installed
+    ansible.builtin.include_role:
+      name: cinnamon
+    when: cinnamon_stat.stat.exists
+
