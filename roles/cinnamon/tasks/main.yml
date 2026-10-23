@@ -1,0 +1,5 @@
+- name: Update all Cinnamon Spices
+  tags: always
+  ansible.builtin.command:
+    cmd: cinnamon-spice-updater --update-all
+  changed_when: false
