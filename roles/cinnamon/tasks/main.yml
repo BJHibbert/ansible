@@ -3,3 +3,4 @@
   ansible.builtin.command:
     cmd: cinnamon-spice-updater --update-all
   changed_when: false
+
