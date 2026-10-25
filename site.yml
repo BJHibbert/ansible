@@ -24,6 +24,8 @@
     - base
 
 - hosts: all
+  become: yes
+  become_user: bjhibbert
   tasks:
 
   - name: Check if cinnamon is installed
